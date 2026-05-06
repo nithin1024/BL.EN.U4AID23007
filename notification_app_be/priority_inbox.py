@@ -73,7 +73,7 @@ if __name__ == "__main__":
     logger.info("Starting Priority Inbox processing...")
     top_notifications = priority_inbox(10)
     
-    print("\n--- PRIORITY INBOX (Top 10) ---")
+    logger.info("\n--- PRIORITY INBOX (Top 10) ---")
     for i, notif in enumerate(top_notifications, 1):
-        print(f"{i}. [{notif['Type']}] {notif['Message']} (Received: {notif['Timestamp']})")
-    print("-------------------------------\n")
+        logger.info(f"{i}. [{notif['Type']}] {notif['Message']} (Received: {notif['Timestamp']})")
+    logger.info("-------------------------------\n")

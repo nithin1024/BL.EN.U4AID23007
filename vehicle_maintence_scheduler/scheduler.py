@@ -111,16 +111,16 @@ def schedule_maintenance():
         
         max_impact, selected_vehicles = maximize_impact(vehicles, budget)
         
-        print(f"\n--- DEPOT {depot_id} MAINTENANCE SCHEDULE ---")
-        print(f"Daily Budget: {budget} hours")
-        print(f"Maximized Impact Score: {max_impact}")
-        print(f"Vehicles Scheduled: {len(selected_vehicles)}")
+        logger.info(f"\n--- DEPOT {depot_id} MAINTENANCE SCHEDULE ---")
+        logger.info(f"Daily Budget: {budget} hours")
+        logger.info(f"Maximized Impact Score: {max_impact}")
+        logger.info(f"Vehicles Scheduled: {len(selected_vehicles)}")
         total_duration = sum(v["Duration"] for v in selected_vehicles)
-        print(f"Total Time Scheduled: {total_duration} hours")
-        print("Tasks to perform:")
+        logger.info(f"Total Time Scheduled: {total_duration} hours")
+        logger.info("Tasks to perform:")
         for v in selected_vehicles:
-            print(f"  - TaskID: {v['TaskID']} | Duration: {v['Duration']}h | Impact: {v['Impact']}")
-        print("------------------------------------------")
+            logger.info(f"  - TaskID: {v['TaskID']} | Duration: {v['Duration']}h | Impact: {v['Impact']}")
+        logger.info("------------------------------------------")
 
 if __name__ == "__main__":
     logger.info("Starting Vehicle Maintenance Scheduler...")
