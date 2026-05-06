@@ -1,0 +1,6 @@
+node_modules/
+__pycache__/
+*.pyc
+*.log
+test_api.py
+generate_screenshots.py
